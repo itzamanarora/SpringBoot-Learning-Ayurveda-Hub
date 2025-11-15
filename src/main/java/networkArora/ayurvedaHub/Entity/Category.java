@@ -1,5 +1,6 @@
 package networkArora.ayurvedaHub.Entity;
 
+import java.time.Instant;
 import java.util.Date;
 
 import jakarta.persistence.Entity;
@@ -30,7 +31,7 @@ public class Category {
 
     @Enumerated(EnumType.STRING)
     private Status status;
-    private Date createdAt;
+    private Instant createdAt;
     private Date updatedAt;
 
     @ManyToOne
