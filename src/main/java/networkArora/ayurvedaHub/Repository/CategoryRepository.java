@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import networkArora.ayurvedaHub.Entity.Category;
 
 @Repository
-public interface CategoryRepository extends JpaRepository<Category, Long>{
+public interface CategoryRepository extends JpaRepository<Category, String>{
 
 }

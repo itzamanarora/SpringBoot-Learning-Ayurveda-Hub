@@ -3,11 +3,12 @@ package networkArora.ayurvedaHub.Entity;
 import java.time.Instant;
 import java.util.Date;
 
+import org.hibernate.annotations.UuidGenerator;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -21,17 +22,29 @@ import networkArora.ayurvedaHub.Utility.Status;
 public class Category {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long categoryId;
+    @UuidGenerator
+    private String categoryId;
 
+    @Column(nullable=false, unique=true)
     private String categoryName;
+    
+    @Column(nullable=false, unique=true)
     private String categorySlug;
-    private String categoryDescription;      
+
+    @Column(nullable=false, length=500) 
+    private String categoryDescription;
+    
+    @Column(nullable=true, length=1000)
     private String coverImageURL;
 
+    @Column(nullable=false)
     @Enumerated(EnumType.STRING)
     private Status status;
+
+    @Column(nullable=false, updatable=false)
     private Instant createdAt;
+
+    @Column(nullable=true)
     private Date updatedAt;
 
     @ManyToOne
