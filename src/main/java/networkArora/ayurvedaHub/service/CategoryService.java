@@ -1,10 +1,14 @@
 package networkArora.ayurvedaHub.service;
 
 import java.time.Instant;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import networkArora.ayurvedaHub.exception.apiException;
+import networkArora.ayurvedaHub.utility.Status;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
@@ -26,7 +30,12 @@ public class CategoryService {
 
     // Get All Categories
     public List<Category> getAllCategories() {
-        return categoryRepository.findAll();
+        List<Category> categories = categoryRepository.findByStatus(Status.ACTIVE);
+       if (categories == null && categories.isEmpty()){
+           throw new apiException("No active categories found", HttpStatus.NOT_FOUND);
+       } else {
+           return categories;
+       }
     }
 
     // Get Category by ID
