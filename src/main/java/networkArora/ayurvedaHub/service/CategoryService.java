@@ -1,4 +1,4 @@
-package networkArora.ayurvedaHub.Service;
+package networkArora.ayurvedaHub.service;
 
 import java.time.Instant;
 import java.util.List;
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
-import networkArora.ayurvedaHub.Entity.Category;
-import networkArora.ayurvedaHub.Repository.CategoryRepository;
+import networkArora.ayurvedaHub.model.Category;
+import networkArora.ayurvedaHub.repository.CategoryRepository;
 
 @Service
 @AllArgsConstructor

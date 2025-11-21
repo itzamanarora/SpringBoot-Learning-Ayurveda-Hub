@@ -1,9 +1,9 @@
-package networkArora.ayurvedaHub.Repository;
+package networkArora.ayurvedaHub.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import networkArora.ayurvedaHub.Entity.Category;
+import networkArora.ayurvedaHub.model.Category;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, String>{

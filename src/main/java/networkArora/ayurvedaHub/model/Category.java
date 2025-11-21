@@ -1,4 +1,4 @@
-package networkArora.ayurvedaHub.Entity;
+package networkArora.ayurvedaHub.model;
 
 import java.time.Instant;
 import java.util.Date;
@@ -14,7 +14,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
-import networkArora.ayurvedaHub.Utility.Status;
+import networkArora.ayurvedaHub.utility.Status;
 
 @Entity
 @Table(name="categories")

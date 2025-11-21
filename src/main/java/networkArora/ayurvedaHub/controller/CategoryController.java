@@ -1,4 +1,4 @@
-package networkArora.ayurvedaHub.Controller;
+package networkArora.ayurvedaHub.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,12 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.AllArgsConstructor;
-import networkArora.ayurvedaHub.Entity.Category;
-import networkArora.ayurvedaHub.Service.CategoryService;
-
-
-
-
+import networkArora.ayurvedaHub.model.Category;
+import networkArora.ayurvedaHub.service.CategoryService;
 
 
 @RestController
