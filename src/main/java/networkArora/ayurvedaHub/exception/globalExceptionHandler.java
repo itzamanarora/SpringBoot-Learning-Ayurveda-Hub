@@ -12,6 +12,17 @@ import java.util.Map;
 @ControllerAdvice
 public class globalExceptionHandler {
 
+    @ExceptionHandler(apiException.class)
+    public ResponseEntity<?> handleApiException(apiException exception) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("timestamp", Instant.now());
+        body.put("error", exception.getStatus().getReasonPhrase());
+        body.put("status", exception.getStatus().value());
+        body.put("message", exception.getMessage());
+
+        return new ResponseEntity<>(body, exception.getStatus());
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> handleGeneralError(Exception exception) {
         Map<String, Object> body = new HashMap<>();

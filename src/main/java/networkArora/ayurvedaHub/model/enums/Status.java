@@ -1,4 +1,4 @@
-package networkArora.ayurvedaHub.utility;
+package networkArora.ayurvedaHub.model.enums;
 
 public enum Status {
     ACTIVE,

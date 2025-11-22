@@ -3,18 +3,11 @@ package networkArora.ayurvedaHub.model;
 import java.time.Instant;
 import java.util.Date;
 
+import jakarta.persistence.*;
 import org.hibernate.annotations.UuidGenerator;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
 import lombok.Data;
-import networkArora.ayurvedaHub.utility.Status;
+import networkArora.ayurvedaHub.model.enums.Status;
 
 @Entity
 @Table(name="categories")
@@ -23,6 +16,7 @@ public class Category {
 
     @Id
     @UuidGenerator
+    @GeneratedValue
     private String categoryId;
 
     @Column(nullable=false, unique=true)
@@ -45,7 +39,7 @@ public class Category {
     private Instant createdAt;
 
     @Column(nullable=true)
-    private Date updatedAt;
+    private Instant updatedAt;
 
     @ManyToOne
     @JoinColumn(name="parent_category_id")
